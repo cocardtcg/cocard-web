@@ -1,0 +1,10 @@
+{
+  "name": "Cocard - 코난 TCG 덱빌더",
+  "short_name": "Cocard",
+  "description": "코난 TCG 카드 데이터베이스 & 덱빌더 (한국어)",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#0a0e1a",
+  "icons": []
+}

@@ -1,6 +1,14 @@
-const CACHE_NAME = 'cocard-images-v2';
+const CACHE_NAME = 'cocard-images-v3';
 const IMAGE_HOST = 'www.takaratomy.co.jp';
+const THUMB_HOST = 'cocardtcg.github.io';
 const MAX_ENTRIES = 2000;
+
+// 캐시 대상: 타카라토미 카드 원본 + carddata 썸네일(WebP)
+function isCardImage(url) {
+  if (url.hostname === IMAGE_HOST) return url.pathname.includes('/storage/card/');
+  if (url.hostname === THUMB_HOST) return url.pathname.includes('/carddata/v1/thumbs/');
+  return false;
+}
 
 self.addEventListener('install', () => {
   self.skipWaiting();
@@ -34,9 +42,8 @@ async function trimCache() {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // Only cache card images from takaratomy
-  if (url.hostname !== IMAGE_HOST) return;
-  if (!url.pathname.includes('/storage/card/')) return;
+  // Only cache card images (takaratomy originals + carddata thumbnails)
+  if (!isCardImage(url)) return;
 
   event.respondWith(
     caches.open(CACHE_NAME).then((cache) =>

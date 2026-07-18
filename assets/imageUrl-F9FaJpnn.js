@@ -1,0 +1,1 @@
+function c(a){return`https://www.takaratomy.co.jp/products/conan-cardgame/storage/card/${a}.jpg`}function e(a){return`https://cocardtcg.github.io/carddata/v1/thumbs/${a}.webp`}function n(a,r){const t=a.currentTarget;return t.dataset.fallback!=="1"?(t.dataset.fallback="1",t.src=c(r),!1):!0}export{c as a,n as f,e as g};

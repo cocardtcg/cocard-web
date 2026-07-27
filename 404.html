@@ -6,7 +6,7 @@
   <script>
     // GitHub Pages SPA redirect - store path and redirect to index
     sessionStorage.redirect = location.href;
-    location.replace(location.pathname.split('/').slice(0, 2).join('/') + '/');
+    location.replace(location.pathname.split('/').slice(0, 1).join('/') + '/');
   </script>
 </head>
 <body></body>

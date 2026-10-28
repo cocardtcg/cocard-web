@@ -1,1 +1,0 @@
-import{a}from"./index-B4Nx6lbm.js";import{g as o}from"./imageUrl-F9FaJpnn.js";const r=new Map;function l(t){const[,n]=a.useState(0);return a.useEffect(()=>{if(!t||r.has(t))return;let s=!1;const e=new Image;return e.onload=()=>{r.set(t,e.naturalWidth>e.naturalHeight),s||n(c=>c+1)},e.src=o(t),()=>{s=!0}},[t]),t?r.get(t)??!1:!1}export{l as u};

@@ -1,1 +1,0 @@
-function r(t){return t.sameId?`s:${t.sameId}`:`b:${t.id.replace(/(P2?|Sec\d*)$/,"")}`}function u(t,s,n){const o=r(n);let e=0;for(const c of t){const a=s.get(c.cardId);a&&r(a)===o&&(e+=c.count)}return e}function d(t,s){const n=new Map;for(const o of t){const e=s.get(o.cardId);if(!e)continue;const c=r(e);n.set(c,(n.get(c)??0)+o.count)}return n}export{d as b,u as c,r as s};
